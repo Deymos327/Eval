@@ -9,7 +9,7 @@ body
 {
     background-image: url(Content/img/Main\ page.png);
     background-repeat: no-repeat;
-    background-size: auto;
+    background-size: contain;
 }
 
 .container
@@ -34,6 +34,8 @@ main
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
     background-attachment: fixed;
 }
 
@@ -137,7 +139,6 @@ ul
     opacity: 1;
 }
 
-/* Задержка для каждого элемента меню */
 .mobile-modal:active .nav-list li:nth-child(1) { transition-delay: 0.1s; }
 .mobile-modal:active .nav-list li:nth-child(2) { transition-delay: 0.2s; }
 .mobile-modal:active .nav-list li:nth-child(3) { transition-delay: 0.3s; }
@@ -664,7 +665,13 @@ footer
 
 
 
-@media (max-width: 1440px) { 
+@media (max-width: 1440px) {
+    
+body
+{
+    background-size: auto;
+}
+ 
 
 
   .container {
@@ -689,6 +696,11 @@ footer
 }
 
 @media (max-width: 1200px) {
+
+   .about-master
+   {
+    font-size: 100%;
+   } 
 .button--master
 {
     font-size: 24px;
@@ -848,31 +860,6 @@ body
 }
 
 @media (max-width: 768px) {
-.about-master
-{
-    font-size: 18px;
-    display: block;
-    text-align: center;
-}
-.button--master
-{
-    display: block;
-}
-.master-card::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 0;
-    background: linear-gradient(#5c5c5ca8, #313131);
-    transition: height 0.5s ease;
-}
-
-.master-card:before {
-    height: 100%;
-}
-
 
 .master-card__rang {
     display: block;
@@ -882,20 +869,6 @@ body
 
 
 
-.master-card {
-    justify-content: center;
-    .info-box
-    {
-        height: 100%;
-        gap: auto;
-    }
-    .button--master,
-    .master-card__name {
-        display: block;
-        text-align: center;
-        animation: fadeIn 0.3s ease;
-    }
-}
 
 .button--mt
 {
@@ -976,6 +949,11 @@ body
 .title--start
 {   
     align-items: center;
+}
+
+h2
+{
+    text-align: center;
 }
 
 .thierd-title
