@@ -70,37 +70,6 @@ ul
     text-decoration: none;
 }
 
-
-.burger
-{
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 50px;
-    height: 45px;
-    margin: auto 0;
-}
-.burger div 
-{
-    height: 4px;
-    background: #fff;
-    border-radius: 2px;
-    transition: all 0.3s ease;
-}
-
-/* Анимация бургер-меню при открытии */
-.burger:active div:nth-child(1) {
-    transform: translateY(13px) rotate(45deg);
-}
-
-.burger:active div:nth-child(2) {
-    opacity: 0;
-}
-
-.burger-menu:active div:nth-child(3) {
-    transform: translateY(-13px) rotate(-45deg);
-}
-
 .mobile-modal {
     position: fixed;
     top: 0;
@@ -939,6 +908,7 @@ body
 {
     background-image: url(Content/img/BackgroundMonolith.png);
     background-size: auto;
+    
 }
 .about-us
 {
@@ -974,10 +944,6 @@ h2
     .header-list
   {
     display: none;
-  }
-    .burger
-  {
-    display: flex;
   }
 
   .container {
