@@ -8,6 +8,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <meta name="apple-itunes-app" content="app-id=585027354">
+<meta name="google-play-app" content="app-id=com.google.android.apps.maps">
 </head>
 <body>
     <header>
@@ -238,9 +240,13 @@
                     <div class="contact">
                         <ul class="contact-list">
                             <li><a href="tel: +375293434325" class="link footer-link"> +375 29 343 43 25</a></li>
-                            <li><a href="#" onclick="openMaps('ул. Жореса Алферова, 7, Минск')" data-lat="53.86238531434005" 
+                            <li><a href="https://yandex.by/maps/org/eval/52623739810/" 
+   onclick="openMaps(event, 'ул. Жореса Алферова, 7, Минск', 53.86238531434005, 27.552616579220196)"
+   data-lat="53.86238531434005" 
    data-lng="27.552616579220196" 
-   data-title="ул. Жореса Алферова, 7, Минск" class="link footer-link">ул. Жореса Алферова, 7, г. Минск</a></li>
+   class="link footer-link">
+   ул. Жореса Алферова, 7, г. Минск
+</a></li>
                             <li><a href="mailto: barbershop_eval25@mail.ru" class="link footer-link">barbershop_eval25@mail.ru</a></li>
                             <li><span class="footer-link">10.00 - 22.00 без выходных</span></li>
                         </ul>
@@ -419,11 +425,23 @@
     });
 </script>
 <script>
-function openMaps(address) {
-  if (/Android|iPhone|iPad/i.test(navigator.userAgent)) {
-    window.location.href = `geo:53.86238531434005,27.552616579220196?q=${encodeURIComponent(address)}`;
-  } else {
-    window.open(`https://yandex.by/maps/org/eval/52623739810/?ll=27.552309%2C53.862058&mode=search&sll=27.552309%2C53.862058&source=serp_navig&text=eval%20barbershop&z=15?api=1&query=${encodeURIComponent(address)}`, '_blank');
+function openMaps(event, address, lat, lng) {
+  event.preventDefault();
+  
+  const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+  const isAndroid = /Android/i.test(navigator.userAgent);
+  if (isIOS) {
+    const googleMapsAppUrl = `comgooglemaps://?q=${lat},${lng}&center=${lat},${lng}&zoom=15`;
+    window.location.href = googleMapsAppUrl;
+    setTimeout(() => {
+      window.location.href = `maps://?q=${encodeURIComponent(address)}&ll=${lat},${lng}`;
+    }, 300);
+  } 
+  else if (isAndroid) {
+    window.location.href = `geo:${lat},${lng}?q=${encodeURIComponent(address)}`;
+  } 
+  else {
+    window.open(`https://yandex.by/maps/org/eval/52623739810/?ll=${lng}%2C${lat}&mode=search&text=${encodeURIComponent(address)}&z=15`, '_blank');
   }
 }
 </script>
