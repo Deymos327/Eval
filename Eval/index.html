@@ -33,21 +33,6 @@
                     <li><a href="#photo" class="link header-list__item">Фото салона</a></li>
                     <li><a href="#cost" class="link header-list__item">Цены</a></li>
                 </ul>
-
-                <div class="burger">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </div>
-
-                <div class="mobile-modal">
-                <ul class="na">
-                    <li><a href="#master" class="link header-list__item">Мастера</a></li>
-                    <li><a href="#about-us" class="link header-list__item">О нас</a></li>
-                    <li><a href="#photo" class="link header-list__item">Фото салона</a></li>
-                    <li><a href="#cost" class="link header-list__item">Цены</a></li>
-                </ul>
-                </div>
             </nav>
     </header>
 <section class="hero-page" id="hero-page">
@@ -376,54 +361,6 @@
     </script>
 
     <script type="text/javascript" src="https://w1301107.yclients.com/widgetJS" charset="UTF-8"></script>
-
-    <script> document.addEventListener('DOMContentLoaded', function() {
-        const burgerMenu = document.querySelector('.burger');
-        const mobileModal = document.querySelector('.mobile-modal');
-        
-        burgerMenu.addEventListener('click', function(e) {
-            e.stopPropagation();
-            
-            this.classList.toggle('active');
-            
-            mobileModal.classList.toggle('active');
-            
-            document.body.style.overflow = mobileModal.classList.contains('active') 
-                ? 'hidden' 
-                : 'auto';
-        });
-        
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                burgerMenu.classList.remove('active');
-                mobileModal.classList.remove('active');
-                document.body.style.overflow = 'auto';
-                
-                const targetId = this.getAttribute('href');
-                const targetSection = document.querySelector(targetId);
-                
-                if (targetSection) {
-                    window.scrollTo({
-                        top: targetSection.offsetTop,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-        document.addEventListener('click', function(e) {
-            if (mobileModal.classList.contains('active'))
-             {
-                if (!mobileModal.contains(e.target) && !burgerMenu.contains(e.target)) {
-                    burgerMenu.classList.remove('active');
-                    mobileModal.classList.remove('active');
-                    document.body.style.overflow = 'auto';
-                }
-            }
-        });
-    });
-</script>
 <script>
 function openMaps(event, address, lat, lng) {
   event.preventDefault();
