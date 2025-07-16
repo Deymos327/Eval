@@ -937,7 +937,8 @@ body
 
     main
 {
-    background-image: url('Content/img/BackgroundMonolith.png');
+    background-image: url(Content/img/BackgroundMonolith.png);
+    background-size: auto;
 }
 .about-us
 {
