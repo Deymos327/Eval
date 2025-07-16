@@ -238,7 +238,7 @@
                     <div class="contact">
                         <ul class="contact-list">
                             <li><a href="tel: +375293434325" class="link footer-link"> +375 29 343 43 25</a></li>
-                            <li><a href="https://maps.app.goo.gl/3gwj9hGn5kBwEgP67" class="link footer-link">ул. Жореса Алферова, 7, г. Минск</a></li>
+                            <li><a href="#" onclick="openMaps('Красная площадь, Москва'); return false;" class="link footer-link">ул. Жореса Алферова, 7, г. Минск</a></li>
                             <li><a href="mailto: barbershop_eval25@mail.ru" class="link footer-link">barbershop_eval25@mail.ru</a></li>
                             <li><span class="footer-link">10.00 - 22.00 без выходных</span></li>
                         </ul>
@@ -373,33 +373,26 @@
         const burgerMenu = document.querySelector('.burger');
         const mobileModal = document.querySelector('.mobile-modal');
         
-        // Добавляем обработчик клика на бургер-меню
         burgerMenu.addEventListener('click', function(e) {
-            e.stopPropagation(); // Предотвращаем всплытие события
+            e.stopPropagation();
             
-            // Переключаем классы для анимации бургера
             this.classList.toggle('active');
             
-            // Переключаем видимость модального окна
             mobileModal.classList.toggle('active');
             
-            // Блокируем скролл страницы при открытом меню
             document.body.style.overflow = mobileModal.classList.contains('active') 
                 ? 'hidden' 
                 : 'auto';
         });
         
-        // Обработчик для ссылок в меню
         document.querySelectorAll('.nav-link').forEach(link => {
             link.addEventListener('click', function(e) {
                 e.preventDefault();
                 
-                // Закрываем меню
                 burgerMenu.classList.remove('active');
                 mobileModal.classList.remove('active');
                 document.body.style.overflow = 'auto';
                 
-                // Плавный скролл к секции
                 const targetId = this.getAttribute('href');
                 const targetSection = document.querySelector(targetId);
                 
@@ -411,12 +404,9 @@
                 }
             });
         });
-        
-        // Закрытие меню при клике вне его области
         document.addEventListener('click', function(e) {
             if (mobileModal.classList.contains('active'))
              {
-                // Если клик не по меню и не по бургеру
                 if (!mobileModal.contains(e.target) && !burgerMenu.contains(e.target)) {
                     burgerMenu.classList.remove('active');
                     mobileModal.classList.remove('active');
@@ -425,6 +415,15 @@
             }
         });
     });
+</script>
+<script>
+function openMaps(address) {
+  if (/Android|iPhone|iPad/i.test(navigator.userAgent)) {
+    window.location.href = `geo:53.86238531434005,27.552616579220196?q=${encodeURIComponent(address)}`;
+  } else {
+    window.open(`https://yandex.by/maps/org/eval/52623739810/?ll=27.552309%2C53.862058&mode=search&sll=27.552309%2C53.862058&source=serp_navig&text=eval%20barbershop&z=15?api=1&query=${encodeURIComponent(address)}`, '_blank');
+  }
+}
 </script>
 </body>
 </html>
