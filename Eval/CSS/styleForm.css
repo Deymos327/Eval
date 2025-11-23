@@ -1,0 +1,155 @@
+form
+{
+  width: 60%;
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-section
+{
+  background-color: black;
+  color: white;
+  padding-bottom: 20px;
+}
+
+.wrapper
+{
+  position: relative;
+  margin-bottom: 16px;
+}
+
+input 
+{
+  padding: 20px 0;
+  border-bottom: 2px solid #D27046;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  width: 100%;
+  color: white;
+  background-color: black;
+  font-size: 20px;
+}
+
+
+.wrapper:has(input:focus) label,
+.wrapper:has(input:not(:placeholder-shown)) label,
+.wrapper:has(textarea:focus) label,
+.wrapper:has(textarea:not(:placeholder-shown)) label {
+    top: 0;
+    padding: 0 4px;
+    left: 8px;
+    font-size: 14px;
+    color: #D27046;
+}
+
+.wrapper:has(textarea) label 
+{
+    background-color: black;
+    z-index: 2;
+}
+
+label 
+{
+  transition: top .3s ease, .3s ease, left .3s ease, padding .3s ease,font-size .3s ease;
+    pointer-events: none;
+    font-size: 20px;
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    left: 16px;
+    color: #999;
+}
+.wrapper input:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+
+
+
+textarea {
+  padding: 16px 0 4px 0;
+  border-bottom: 2px solid #D27046;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  width: 100%;
+  color: white;
+  background-color: rgb(0, 0, 0);
+  resize: none; 
+  overflow: hidden; 
+  min-height: 50px; 
+  font-family: inherit; 
+  font-size: inherit; 
+  outline: none; 
+  box-shadow: none;
+  font-size: 20px;
+  transition: height 0.3s ease-in-out !important;
+}
+
+
+textarea.auto-expand 
+{
+  transition: height 0.3s ease-in-out !important;
+}
+
+textarea:focus 
+{
+    outline: none;
+    box-shadow: none;
+}
+
+
+.wrapper:has(input:focus) label,
+.wrapper:has(input:not(:placeholder-shown)) label,
+.wrapper:has(textarea:focus) label,
+.wrapper:has(textarea:not(:placeholder-shown)) label {
+    top: 0;
+    padding: 0 4px;
+    left: 8px;
+    font-size: 14px;
+}
+
+.wrapper:has(textarea) label {
+    background-color: black; 
+    z-index: 2;
+}
+
+.stars-rating {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.star {
+    font-size: 32px;
+    color: #ccc;
+    cursor: pointer;
+    transition: color 0.2s ease;
+    user-select: none;
+}
+
+.star:hover,
+.star.hovered {
+    color: #D27046;
+}
+
+.star.selected {
+    color: #D27046;
+}
+
+
+.wrapper:has(#rating:not([value=""])) label 
+{
+  top: 0;
+  padding: 0 4px;
+  left: 8px;
+  font-size: 14px;
+  color: #D27046;
+  background-color: black;
+  z-index: 2;
+}
