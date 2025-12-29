@@ -23,8 +23,13 @@ body>section, body>main, body>footer
 }
 .container
 {
-    max-width: 1440px;
+    max-width: 1460px;
     margin: 0 auto;
+}
+
+.container--padding
+{
+    padding: 0 10px;
 }
 
 nav
@@ -85,6 +90,11 @@ ul
 .link
 {
     text-decoration: none;
+}
+
+nav
+{
+    margin: 0;
 }
 
 .mobile-modal {
@@ -238,7 +248,12 @@ h1
     line-height: 100%;
 }
 
-.title-paragraph
+.second-title--margin-bottom
+{
+    margin-bottom: 0;
+}
+
+.title__paragraph
 {
     font-size: 24px;
     letter-spacing: 1px;
@@ -568,6 +583,15 @@ footer
     height: 64px;
     width: 64px;
 }
+.sn:hover
+{
+    border-bottom: 2px solid white;    
+}
+
+.sn:active
+{
+    border-bottom: 2px solid #D27046;    
+}
 
 .header-list__item:active
 {   
@@ -691,6 +715,10 @@ body
   .container {
     max-width: 1200px;
   }
+  .container-header
+{
+    max-width: 1200px;
+}
 .cost-list
 {
     width: 50%;
@@ -733,6 +761,10 @@ body
   {
     max-width: 992px;
   }
+    .container-header
+{
+    max-width: 992px;
+}
 
   .master-card:nth-of-type(1)
 {
@@ -766,7 +798,7 @@ body
     gap: 10px; 
   }
 
-  .title-paragraph
+  .title__paragraph
 {
     width: 70%;
 }
@@ -814,6 +846,10 @@ body
   .container {
     max-width: 768px;
   }
+    .container-header
+{
+    max-width: 768px;
+}
 
 .master-cards
 {
@@ -1019,7 +1055,11 @@ h2
   .container {
     max-width: 576px;
   }
-    .title-paragraph
+    .container-header
+{
+    max-width: 576px;
+}
+    .title__paragraph
 {
     font-size: 16px;
     line-height: 20px;
@@ -1035,6 +1075,13 @@ h2
 
 @media (max-width: 576px) 
 {
+
+.title__paragraph
+{
+    font-size: 13px;
+    line-height: 12px;
+    width: 90%;
+}
 
 form
 {
@@ -1137,7 +1184,12 @@ form
 
   .container {
     max-width: 320px;
+    
   }
+    .container-header
+{
+    max-width: 320px;
+}
 
   body
 {
