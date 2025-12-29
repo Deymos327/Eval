@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,7 +19,8 @@
 </head>
 <body>
     <header>
-            <nav class="container ">
+        <div class="container container--padding">
+            <nav>
                 <div class="logo-header">
                     <a href="#hero-page">
                         <svg width="64" height="64" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -40,9 +41,11 @@
                     <li><a href="#cost" class="link header-list__item">Цены</a></li>
                 </ul>
             </nav>
+        </div>
+            
     </header>
         <section class="hero-page" id="hero-page">
-            <div class="container container--hero-page">
+            <div class="container container--padding container--hero-page">
                 <div class="textbox textbox--hero-page">
                     <h1>CREATE YOURSELF</h1>
                     <p class="h1-paragraph">Пространство новой версии твоего образа!</p>
@@ -51,12 +54,12 @@
                 </div>
             </div>
         </section>
-
+    <main>
         <section class="master" id="master">
-            <div class="container container--center">
+            <div class="container container--padding container--center">
                 <div class="title title--center">
                     <h2 class="second-title">НАШИ МАСТЕРА</h2>
-                    <p class="title-paragraph">Люди создающие совершенство, постоянно улавливая всё больше и больше новых навыков, делая совершенным EVAL для Вас!</p>
+                    <p class="title__paragraph">Люди создающие совершенство, постоянно улавливая всё больше и больше новых навыков, делая совершенным EVAL для Вас!</p>
                 </div>
                 <div class="master-cards">
                     <div class="master-card">
@@ -103,14 +106,11 @@
                 </div>
             </div>
         </section>
-    <main>
-        
-
         <section class="about-us" id="about-us">
-            <div class="container">
+            <div class="container container--padding">
                 <div class="title">
-                    <h2 class="second-title">О НАС</h2>
-                    <p class="title-paragraph"></p>
+                    <h2 class="second-title second-title--margin-bottom">О НАС</h2>
+                    <p class="title__paragraph"></p>
                 </div>
                     <div class="textbox textbox--about-us">
                         <div class="about-us__paragraph">
@@ -127,7 +127,7 @@
             <div class="container container--center">
                 <div class="title title--center">
                     <h2 class="second-title">ФОТО САЛОНА</h2>
-                    <p class="title-paragraph"></p>
+                    <p class="title__paragraph"></p>
                 </div>
                 <div class="photo-list">
                     <div class="photo-list__item"><img src="Content/img/Photo1.png" alt=""></div>
@@ -138,10 +138,10 @@
         </section>
 
         <section class="cost" id="cost">
-            <div class="container container--center-mobile">
+            <div class="container container--padding container--center-mobile">
                 <div class="title title--start">
                     <h2 class="second-title">ЦЕНЫ НА УСЛУГИ</h2>
-                    <p class="title-paragraph"></p>
+                    <p class="title__paragraph"></p>
                 </div>
                 <div class="cost-list">
                     <div class="cost-list__item">
@@ -238,21 +238,22 @@
                 <a class="button button--mt button--padding" href="https://n1301107.yclients.com">Записаться</a>
             </div>
         </section>
+        
         <section class="form-section">
-            <div class="container container--center">
+            <div class="container container--padding container--center">
                 <div class="title title--center">
                     <h2 class="second-title">ОСТАВЬ СВОЙ ОТЗЫВ</h2>
-                    <p class="title-paragraph">Мы хотим быть лучшими в своём деле,
+                    <p class="title__paragraph">Мы хотим быть лучшими в своём деле,
 поэтому нам важно знать ваше мнение о нашей работе.</p>
                 </div>
-                <form action="">
+                <form>
                     <div class="wrapper">
                         <label>Ваше имя</label>
                         <input type="text" id="input" placeholder=" ">
                     </div>
                     <div class="wrapper">
                         <label>Ваш отзыв</label>
-                        <textarea id="message" class="form-textarea auto-expand" placeholder="  " rows="1"data-min-rows="1"></textarea>
+                        <textarea id="message" class="form-textarea auto-expand" placeholder="  " rows="1" data-min-rows="1"></textarea>
                     </div>
                     <div class="wrapper">
                         <label>Оценка</label>
@@ -263,20 +264,17 @@
                             <span class="star" data-value="4">★</span>
                             <span class="star" data-value="5">★</span>
                         </div>
-                        <input type="hidden" id="rating" name="rating" required>
+                        <input type="hidden" id="rating" name="rating">
                     </div>
                     <button class="button button--mt-form button--center button--padding">Отправить</button>
                 </form>
             </div>
             
         </section>
-
-
-
     </main>
 
     <footer>
-        <div class="container">
+        <div class="container container--padding">
             <div class="footer__content">
                 <div class="block-info">
                     <div class="contact">
